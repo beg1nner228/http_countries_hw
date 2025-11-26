@@ -1,4 +1,4 @@
-import _, { camelCase } from 'lodash'; // import lodash for debounce functionality
+import _, { camelCase } from 'lodash';
 import 'izitoast/dist/css/iziToast.min.css';
 import iziToast from 'izitoast';
 
@@ -41,7 +41,7 @@ function onInputAddCountires(e) {
                     </li>`;
                 }).join('');
                 
-                countriesList.innerHTML = markup; // Используем innerHTML для замены содержимого
+                countriesList.innerHTML = markup; 
                 return;              
             }
             const markup = data

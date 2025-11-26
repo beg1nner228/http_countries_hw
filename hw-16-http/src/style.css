@@ -1,4 +1,3 @@
-/* ========= GLOBAL ========= */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", Roboto, sans-serif;
 
@@ -12,13 +11,10 @@ body {
   justify-content: center;
   align-items: flex-start;
 }
-
 .container {
   width: 100%;
   max-width: 720px;
 }
-
-/* ========= TITLE (Apple-like) ========= */
 .app-title {
   text-align: center;
   font-size: 40px;
@@ -31,8 +27,6 @@ body {
 
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
-
-/* ========= INPUT (Glassmorphism + Apple) ========= */
 .search-box input {
   width: 100%;
   padding: 16px 22px;
@@ -59,18 +53,12 @@ body {
 
   transform: translateY(-1px);
 }
-
-/* ... (Остальные стили, которые вы предоставили, остаются) ... */
-
-/* ========= LIST (Material-like cards) ========= */
 .countries-list li {
-  /* Базовый стиль карточки */
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(12px);
   padding: 16px 20px;
   margin-bottom: 14px;
   border-radius: 18px;
-  /* Используем Flexbox для основного содержимого */
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -79,27 +67,23 @@ body {
   transition: 0.25s ease;
 }
 
-/* Основной враппер для разделения заголовка и инфо */
 .countries-list li .item-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Распределение заголовка и инфо по краям */
+    justify-content: space-between; 
     width: 100%; 
-    gap: 30px; /* Увеличенный промежуток между секциями */
+    gap: 30px; 
 }
 
-/* Секция флага и названия */
 .countries-list .item-header {
     display: flex;
     align-items: center;
     gap: 16px;
-    /* Фиксированная ширина для ровного столбца названий */
     min-width: 250px; 
-    flex-shrink: 0; /* Не сжимается */
+    flex-shrink: 0; 
 }
 
 .countries-list .country-flag { 
-    /* Используем country-flag-small из вашего исходного кода */
     width: auto;
     height: 60px;
     object-fit: cover;
@@ -114,35 +98,31 @@ body {
     color: #1f1f1f;
 }
 
-/* Секция информации (Столица, Население и т.д.) */
 .countries-list .list-view-info {
-    display: flex; /* Используем Flexbox для горизонтального расположения полей */
-    gap: 20px; /* Промежуток между полями (Capital, Population...) */
+    display: flex; 
+    gap: 20px; 
     align-items: center;
-    flex-wrap: wrap; /* Если не помещается, переносит */
-    margin-left: auto; /* Прижимает к правому краю */
+    flex-wrap: wrap; 
+    margin-left: auto; 
     font-size: 16px;
 }
 
-/* Каждая строка информации внутри list-view-info */
 .countries-list .item-info-row {
-    margin: 0; /* Удаляем лишние отступы */
-    white-space: nowrap; /* Предотвращаем разрыв строки внутри одного поля */
+    margin: 0; 
+    white-space: nowrap; 
 }
 
-.countries-list .item-info-row span:first-child { /* Подпись (Столица:) */
+.countries-list .item-info-row span:first-child { 
     font-weight: 700;
     color: #444;
     margin-right: 5px;
 }
 
-.countries-list .info-value { /* Значение (Минск) */
+.countries-list .info-value { 
     font-weight: 500;
     color: #1f1f1f;
 }
 
-/* ========= COUNTRY INFO (Детальная карточка - оставлена без изменений) ========= */
-/* Если хотите, чтобы детальная карточка была ровной, используйте Grid, как в предыдущем ответе: */
 .country-info .item-info-row {
     display: grid;
     grid-template-columns: 120px 1fr; 
@@ -152,10 +132,8 @@ body {
 .country-info .item-info-row span:first-child {
     font-weight: 700;
     color: #111;
-    margin-right: 0; /* Убираем margin, т.к. Grid его не требует */
+    margin-right: 0; 
 }
-/* ... (Остальные стили для .country-info) ... */
-/* ========= Animation ========= */
 @keyframes fadeIn {
   from {
     opacity: 0;
