@@ -1,0 +1,169 @@
+/* ========= GLOBAL ========= */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", Roboto, sans-serif;
+
+  background: linear-gradient(135deg, #dbe6f6 0%, #cfd9df 100%);
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ========= TITLE (Apple-like) ========= */
+.app-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+
+  color: #1f1f1f;
+  letter-spacing: -0.02em;
+
+  margin-bottom: 30px;
+
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* ========= INPUT (Glassmorphism + Apple) ========= */
+.search-box input {
+  width: 100%;
+  padding: 16px 22px;
+  font-size: 20px;
+
+  border: none;
+  outline: none;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+
+  transition: 0.25s ease;
+}
+
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.75);
+
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+  transform: translateY(-1px);
+}
+
+/* ... (Остальные стили, которые вы предоставили, остаются) ... */
+
+/* ========= LIST (Material-like cards) ========= */
+.countries-list li {
+  /* Базовый стиль карточки */
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  /* Используем Flexbox для основного содержимого */
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: 0.25s ease;
+}
+
+/* Основной враппер для разделения заголовка и инфо */
+.countries-list li .item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Распределение заголовка и инфо по краям */
+    width: 100%; 
+    gap: 30px; /* Увеличенный промежуток между секциями */
+}
+
+/* Секция флага и названия */
+.countries-list .item-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* Фиксированная ширина для ровного столбца названий */
+    min-width: 250px; 
+    flex-shrink: 0; /* Не сжимается */
+}
+
+.countries-list .country-flag { 
+    /* Используем country-flag-small из вашего исходного кода */
+    width: auto;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.countries-list .country-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #1f1f1f;
+}
+
+/* Секция информации (Столица, Население и т.д.) */
+.countries-list .list-view-info {
+    display: flex; /* Используем Flexbox для горизонтального расположения полей */
+    gap: 20px; /* Промежуток между полями (Capital, Population...) */
+    align-items: center;
+    flex-wrap: wrap; /* Если не помещается, переносит */
+    margin-left: auto; /* Прижимает к правому краю */
+    font-size: 16px;
+}
+
+/* Каждая строка информации внутри list-view-info */
+.countries-list .item-info-row {
+    margin: 0; /* Удаляем лишние отступы */
+    white-space: nowrap; /* Предотвращаем разрыв строки внутри одного поля */
+}
+
+.countries-list .item-info-row span:first-child { /* Подпись (Столица:) */
+    font-weight: 700;
+    color: #444;
+    margin-right: 5px;
+}
+
+.countries-list .info-value { /* Значение (Минск) */
+    font-weight: 500;
+    color: #1f1f1f;
+}
+
+/* ========= COUNTRY INFO (Детальная карточка - оставлена без изменений) ========= */
+/* Если хотите, чтобы детальная карточка была ровной, используйте Grid, как в предыдущем ответе: */
+.country-info .item-info-row {
+    display: grid;
+    grid-template-columns: 120px 1fr; 
+    margin: 10px 0;
+    font-size: 18px;
+}
+.country-info .item-info-row span:first-child {
+    font-weight: 700;
+    color: #111;
+    margin-right: 0; /* Убираем margin, т.к. Grid его не требует */
+}
+/* ... (Остальные стили для .country-info) ... */
+/* ========= Animation ========= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

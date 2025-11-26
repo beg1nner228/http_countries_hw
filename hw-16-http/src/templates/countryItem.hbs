@@ -1,0 +1,29 @@
+<li class="country-item {{#if expanded}}expanded{{/if}}">
+  
+  {{!-- Заголовок карточки --}}
+  <div class="item-header">
+    <img
+      class="{{#if expanded}}country-flag-big{{else}}country-flag-small{{/if}}"
+      src="{{flag}}"
+      alt="{{name}} flag"
+    />
+
+    <h2 class="country-title">{{name}}</h2>
+  </div>
+
+  {{!-- Доп. инфо — только если expanded --}}
+  {{#if expanded}}
+    <div class="item-info">
+      <p><span>Capital:</span> {{capital}}</p>
+      <p><span>Population:</span> {{population}}</p>
+      <p><span>Region:</span> {{region}}</p>
+
+      <p><span>Languages:</span>
+        {{#each languages}}
+          {{this.name}}{{#unless @last}}, {{/unless}}
+        {{/each}}
+      </p>
+    </div>
+  {{/if}}
+
+</li>
